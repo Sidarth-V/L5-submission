@@ -1,0 +1,13 @@
+<h1>All tasks</h1>
+
+<h2>Current Tasks</h2>
+{% for task in current %} {{ forloop.counter }} . {{ task }}
+<br />
+{% endfor %}
+
+<h2>Completed Tasks</h2>
+{% for task in completed %} {{ forloop.counter }} . {{ task }}
+<br />
+{% endfor %}
+
+<a href="/tasks">To view tasks</a>

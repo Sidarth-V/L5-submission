@@ -1,0 +1,26 @@
+<h1>Add Task</h1>
+
+<form action="/add-task" method="get">
+  <input type="text" id="task" name="task" />
+  <input type="submit" value="Add Task" />
+</form>
+
+<h2>Search Tasks</h2>
+
+<form action="" method="get">
+  <input type="text" name="search" />
+  <input type="submit" value="Search" />
+</form>
+
+<h1>Current Tasks</h1>
+{% for item in tasks %} {{ forloop.counter }} . {{ item.title }} -
+{{item.created_date }}
+<a href="/delete-task/{{ item.id }}">delete task</a>
+<a href="/complete_task/{{ item.id }}">complete task</a>
+<br />
+{% endfor %}
+
+<br />
+<a href="/completed_tasks">View Completed tasks</a>
+<br />
+<a href="/all_tasks">To view all tasks</a>
